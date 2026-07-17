@@ -1,15 +1,22 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        # 1. Clean the string using separate lines
-        cleaned_list = []
-        for char in s:
-            if char.isalnum():
-                cleaned_list.append(char.lower())
+        left = 0
+        right = len(s) - 1
         
-        cleaned_s = "".join(cleaned_list)
-        
-        # 2. Reverse the cleaned string
-        r = cleaned_s[::-1]
-        
-        # 3. Compare and return
-        return cleaned_s == r
+        while left < right:
+            # 1. If left character is not a letter/number, skip it
+            if not s[left].isalnum():
+                left += 1
+                
+            # 2. If right character is not a letter/number, skip it
+            elif not s[right].isalnum():
+                right -= 1
+                
+            # 3. If both are letters/numbers, compare them
+            else:
+                if s[left].lower() != s[right].lower():
+                    return False  # Not a match!
+                left += 1
+                right -= 1
+                
+        return True
