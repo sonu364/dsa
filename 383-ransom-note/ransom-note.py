@@ -6,3 +6,8 @@ class Solution:
             magazine = magazine.replace(ch,"",1)
         return True
         
+        from collections import Counter
+
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        return Counter(ransomNote) <= Counter(magazine)
