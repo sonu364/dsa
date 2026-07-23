@@ -17,3 +17,14 @@ class Solution:
                 my_dict[total] = 1
 
         return answer
+ ##class Solution:
+   ## def subarraySum(self, nums, k):
+     ##   count = 0
+       ## n = len(nums)
+
+        ##for i in range(n):
+          #  for j in range(i, n):
+             ##   if sum(nums[i:j + 1]) == k:
+                   ## count += 1
+
+        #return count##
